@@ -4,10 +4,10 @@ from selenium import webdriver
 import os
 import time
 
-keyword = 'home solar battery bank'
-imagename = 'home_solar_battery_bank'
-folder_name = 'solar_bat'
-scroll_page_time = 10 # 5 -> approximately 500 images in total
+keyword = 'termite floor damage'
+imagename = 'termite_floor_damage'
+folder_name = 'test'
+scroll_page_time = 3 # 5 -> approximately 500 images in total
 chromePath='/Users/maggiesun/Desktop/cra/chromedriver'
 
 # ----- Donot need to alter below code ------------------
@@ -53,7 +53,7 @@ for x in range(scroll_page_time):
      
     # waiting for the results to load
     # Increase the sleep time if your internet is slow
-    time.sleep(3)
+    time.sleep(5)
      
     new_height = driver.execute_script('\
     return document.body.scrollHeight')
@@ -64,7 +64,7 @@ for x in range(scroll_page_time):
      
         # waiting for the results to load
         # Increase the sleep time if your internet is slow
-        time.sleep(3)
+        time.sleep(5)
      
     except:
         pass
@@ -134,8 +134,6 @@ for i in range(1, len_containers+1):
         print("Couldn't download an image %s, continuing downloading the next one"%(i))
 
     
-
-
 
 
 
