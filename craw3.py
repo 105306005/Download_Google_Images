@@ -4,10 +4,10 @@ from selenium import webdriver
 import os
 import time
 
-keyword = 'termite floor damage'
-imagename = 'termite_floor_damage'
-folder_name = 'test'
-scroll_page_time = 3 # 5 -> approximately 500 images in total
+keyword = 'washer room'
+imagename = 'washer_room'
+folder_name = 'laundry_room2'
+scroll_page_time = 30 # 5 -> approximately 500 images in total
 chromePath='/Users/maggiesun/Desktop/cra/chromedriver'
 
 # ----- Donot need to alter below code ------------------
@@ -107,9 +107,13 @@ for i in range(1, len_containers+1):
     timeStarted = time.time()
     while True:
 
-        if driver.find_element_by_xpath("""//*[@id="Sva75c"]/div/div/div[3]/div[2]/c-wiz/div/div[1]/div[1]/div[2]/div[1]/a/img""").is_displayed() == False:
-            continue
-        imageElement = driver.find_element_by_xpath("""//*[@id="Sva75c"]/div/div/div[3]/div[2]/c-wiz/div/div[1]/div[1]/div[2]/div[1]/a/img""")
+        # if driver.find_element_by_xpath("""//*[@id="Sva75c"]/div/div/div[3]/div[2]/c-wiz/div/div[1]/div[1]/div[2]/div[1]/a/img""").is_displayed() == False:
+        #     break
+        try:
+            imageElement = driver.find_element_by_xpath("""//*[@id="Sva75c"]/div/div/div[3]/div[2]/c-wiz/div/div[1]/div[1]/div[2]/div[1]/a/img""")
+        except:
+            break
+
         imageURL= imageElement.get_attribute('src')
 
         if imageURL != previewImageURL:
@@ -134,6 +138,8 @@ for i in range(1, len_containers+1):
         print("Couldn't download an image %s, continuing downloading the next one"%(i))
 
     
+
+
 
 
 
